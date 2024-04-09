@@ -12,16 +12,16 @@ Resources:
       CidrBlock: !Ref vpcCidr
       EnableDnsSupport: 'true'
       EnableDnsHostnames: 'true'
-      Tags:
-       - Key: stack
-         Value: prod
+      # Tags:
+      #  - Key: stack
+      #    Value: prod
 
-  # mySubnet:
-  #   Type: AWS::EC2::Subnet
-  #   Properties:
-  #     VpcId:
-  #       Ref: myVPC
-  #     CidrBlock: !Ref subnetCidr
-  #     Tags:
-  #     - Key: stack
-  #       Value: production
+  mySubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: myVPC
+      CidrBlock: !Ref subnetCidr
+      # Tags:
+      # - Key: stack
+      #   Value: production
