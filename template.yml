@@ -1,6 +1,8 @@
 Parameters:
   vpcCidr:
    Type: String
+  subnetCidr:
+    Type: String
    
 
 Resources:
@@ -13,3 +15,13 @@ Resources:
       Tags:
        - Key: stack
          Value: prod
+
+  mySubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: myVPC
+      CidrBlock: !Ref subnetCidr
+      Tags:
+      - Key: stack
+        Value: production
